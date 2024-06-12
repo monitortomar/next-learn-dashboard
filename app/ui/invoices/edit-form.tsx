@@ -11,7 +11,6 @@ import Link from 'next/link';
 import { Button } from '@/app/ui/button';
 import { updateInvoice } from "@/app/lib/actions"
 import { useFormState } from 'react-dom';
-
 export default function EditInvoiceForm({
   invoice,
   customers,
@@ -20,7 +19,7 @@ export default function EditInvoiceForm({
   customers: CustomerField[];
 }) {
   const updateInvoiceWithId = updateInvoice.bind(null, invoice.id)
-  const initialState = { message: null, error: {} }
+  const initialState = { message: "", error: {} }
   const [state, dispatch] = useFormState(updateInvoiceWithId, initialState)
   return (
     <form action={dispatch}>
